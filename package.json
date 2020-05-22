@@ -1,0 +1,23 @@
+{
+  "name": "realtime_socket_based_webapp",
+  "version": "1.0.0",
+  "description": "A real time web app with socket implementation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunilchaudhary3112/realtime_socket_based_webapp.git"
+  },
+  "author": "sunilchaudhary3112",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunilchaudhary3112/realtime_socket_based_webapp/issues"
+  },
+  "homepage": "https://github.com/sunilchaudhary3112/realtime_socket_based_webapp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
