@@ -15,9 +15,21 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+// io.on('connection', (socket) => {
+//     socket.emit('news', { from: 'server', text: 'hello client' });
+//     socket.on('my other event', (data) => {
+//         console.log(data);
+//     });
+//     // // when server disconnects from user 
+//     // socket.on('disconnect', () => {
+//     //     console.log('disconnected from user');
+//     // });
+// });
+
+
+//Sending and getting data (acknowledgements)
 io.on('connection', (socket) => {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', (data) => {
-        console.log(data);
-    });
+  socket.on('ferret', (name, word, fn) => {
+    fn(name + ' says ' + word);
+  });
 });

@@ -1,8 +1,19 @@
-<script src="/socket.io/socket.io.js"></script>
+<!-- <script src="/socket.io/socket.io.js"></script>
 <script>
   const socket = io.connect('http://localhost');
   socket.on('news', (data) => {
     console.log(JSON.stringify(data));
     socket.emit('my other event', { my: 'data' });
   });
+</script> -->
+
+<!-- Sending and getting data (acknowledgements) -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io(); // TIP: io() with no args does auto-discovery
+    socket.on('connect', () => { // TIP: you can avoid listening on `connect` and listen on events directly too!
+        socket.emit('ferret', 'tobi', 'woot', (data) => { // args are sent in order to acknowledgement function
+            console.log(data); // data will be 'tobi says woot'
+        });
+    });
 </script>
